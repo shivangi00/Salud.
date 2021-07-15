@@ -1,0 +1,326 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    color: #101010;
+    /* color: #E2E8F0; */
+    /* background-color: #101010; */
+    background: url('../media/scene.png');
+    background-position: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/*=============================NAVBAR========================*/
+.header{
+    padding-bottom: 7%;
+}
+
+.navbar{    
+    z-index: 100;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    background-color: transparent;
+    /* background-color: currentColor; */
+    /* border-bottom: 1px solid #E2E8F0; */
+}
+
+.nav-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-logo{
+    font-size: 2.1rem;
+    font-weight: 600;
+    color: #8c2ff7;
+    letter-spacing: 0.06em;
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.back{
+    background-color: rgb(255, 84, 16);
+    border-radius: 0.3em;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.back:hover{
+    color: white;
+    box-shadow: 0px 0px 5px 3px rgba(46, 42, 42, 0.199);
+}
+
+/*=====================LOGIN FORM===================================*/
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    /* display: none; */
+}
+
+.form > p{
+    font-size: 12px;
+    color: rgb(255, 84, 16);
+}
+
+form{
+    width: 30%;
+    height: 70vh;
+    background-color: #ffffffc4;
+    border-radius: 2em;
+    /* border: 1px solid #101010; */
+    box-shadow: 0px 0px 10px 4px rgba(46, 42, 42, 0.199);
+}
+
+form div{
+    position: relative;
+}
+
+form div label{
+    position: absolute;
+    bottom: 40px;
+    font-size: 14px;
+    pointer-events: none;
+    left: 0;
+    color: #999;
+    transition: .5s;
+}
+
+.tab-header{
+    padding: 0 20px;
+    height: 50px;
+    line-height: 50px;
+    cursor:pointer;
+}
+
+.tab-header > div{
+    margin-top: 20px;
+    font-size: 1.4em;
+    width:50%;
+    float:left;
+    text-align:center;
+    /* background:#ddd; */
+    color:#555;
+    letter-spacing: 0.03em;
+}
+
+.tab-header > div.active {
+    /* background:#f5f5f5; */
+    color:#111;
+    border-bottom: 1.5px solid #8c2ff7;
+}
+
+.tab-content, .form-content{
+    margin: 30px 0 55px 50px;
+}
+
+.form-content > h2{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #8c2ff7;
+    letter-spacing: 0.04em;
+}
+
+.tab-content p, .form-content p{
+    margin-top: 30px;
+    line-height: 25px;
+}
+
+input{
+    padding: 10px 0;
+    margin-bottom: 30px;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    width: 80%;
+    background-color: transparent;
+    border-bottom: 1px solid #999;
+}
+
+input:focus,
+input:valid {
+   border-bottom: 1px solid #8c2ff7;
+}
+
+input:focus ~label,
+input:valid ~label {
+   top: -12px;
+   font-size: 12px;
+   color: #8c2ff7;
+   left: 0;
+}
+
+input:focus ~label,
+input:valid ~label {
+   top: -12px;
+   font-size: 12px;
+   color: #8c2ff7;
+   left: 0;
+}
+
+.tab-content > div.active {
+    display:block;
+}
+
+.tab-content > div{
+    display: none;
+}
+
+.button{
+    width: 40%;
+    color: #000;
+    cursor: pointer;
+    padding: 12px 25px;
+    margin-left: 70px;
+    align-items: center;
+    border-bottom: none;
+    border-radius: 0.5em;
+    background-color: rgba(22, 185, 0, 0.692);
+    transition: all 0.2s ease-in-out;
+}
+
+.button:hover{
+    color: #fff;
+    background-color: rgba(22, 185, 0, 0.877);
+}
+
+/* The message box is shown when the user clicks on the password field */
+#message {
+    display:none;
+    color: #000;
+    position: relative;
+    margin-left: 30px;
+    padding: 20px;
+    width: 25%;
+    background-color: #ffffffc4;
+    border-radius: 1em;
+    /* border: 1px solid #101010; */
+    box-shadow: 0px 0px 10px 4px rgba(46, 42, 42, 0.199);
+}
+  
+  #message p {
+    padding: 10px 0;
+    font-size: 15px;
+  }
+  
+  /* Add a green text color and a checkmark when the requirements are right */
+  .valid {
+    color: green;
+  }
+  
+  .valid:before {
+    position: relative;
+    content: "✔";
+  }
+  
+  /* Add a red text color and an "x" icon when the requirements are wrong */
+  .invalid {
+    color: red;
+  }
+  
+  .invalid:before {
+    position: relative;
+  }
+
+  /*SHOW/ HIDE DIVS ON CLICK*/
+  #getOTP{
+      display: block;
+  }
+
+  #verifyOTP{
+      display: none;
+      margin-top: 30px;
+  }
+
+  #resetPswd{
+      display: none;
+      margin-top: 30px;
+  }
+
+  /*MODAL*/
+
+.modal-wrap{
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    /*transition: all 1.7s ease;*/
+}
+
+.modal{
+    position: relative;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 400px;
+    text-align: center;
+    background-color: royalblue;
+    border: 2px solid white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px darkgrey;
+    color: white;
+}
+
+.modal h1{
+    padding:  150px 50px;
+}
+
+.timer{
+    padding: 20px;
+    font-size: 2em;
+}
+
+#loading-bar-spinner.spinner {
+    left: 50%;
+    margin-left: -20px;
+    top: 65%;
+    margin-top: -20px;
+    position: absolute;
+    z-index: 19 !important;
+    animation: loading-bar-spinner 400ms linear infinite;
+}
+
+#loading-bar-spinner.spinner .spinner-icon {
+    width: 40px;
+    height: 40px;
+    border:  solid 4px transparent;
+    border-top-color:  #00C8B1 !important;
+    border-left-color: #00C8B1 !important;
+    border-radius: 50%;
+}
+
+@keyframes loading-bar-spinner {
+  0%   { transform: rotate(0deg);   transform: rotate(0deg); }
+  100% { transform: rotate(360deg); transform: rotate(360deg); }
+}

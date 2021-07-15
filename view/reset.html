@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salud. - Reset Password</title>
+    <link rel="stylesheet" href="../public/css/sign.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function() {
+    emailjs.init("user_5plZc6LYUQUFuAl6RPWqY");
+    })();
+    </script>
+</head>
+<body>
+    <div class="modal-wrap">
+        <div class="modal">
+            <h1>Attempts Exhausted! <br> You can try again in 30 seconds!</h1>
+            <div id="loading-bar-spinner" class="spinner"><div class="spinner-icon"></div></div>
+        </div>
+    </div>
+
+    <header class="header">
+        <nav class="navbar">
+            <h1 class="nav-logo">Salud.</h1>
+            <!-- <div class="content">
+                <a href="sign.html" class="nav-btn"><button class="back">Back</button></a>
+            </div> -->
+        </nav>
+    </header>
+
+    <!--RESET FORM-->
+    <div class="form">
+        <form method="POST" enctype="text/plain" name="myForm" title="Sign In" onsubmit="return(validateEmail());" style="height: max-content;">
+            <div class="form-content">
+                <!-----------------------RESET--------------------->
+                    <h2 style="margin-bottom: 50px;">Reset Password</h2>
+
+                    <div id="getOTP">
+                        <div class="input-data" style="margin-bottom: 30px;">
+                            <input type="text" id="email" name="email" required>
+                            <label for="email">Registered Email *</label><br>
+                            <span id="text"></span>
+                        </div>
+                        <button id="sendOTP" class="button" onclick="sendMail();">Send OTP</button>
+                    </div>
+                    
+                    <div id="verifyOTP">
+                        <div class="input-data">
+                            <input type="text" id="OTP" name="OTP" required>
+                            <label for="OTP">Enter OTP *</label><br>
+                        </div>
+                        <button id="verify" class="button" onclick="verification();">Verify OTP</button>
+                    </div>
+                    
+                    <div id="resetPswd">
+                        <div class="input-data resetPswd">
+                            <input type="password" id="pswd" class="pswd" name="pswd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                            <label for="pswd" id="pswd-label">New Password *</label><br>
+                        </div>
+                        <button type="button" onclick="resetPassword();" id="pop" class="button">RESET</button>
+                        <p><a href="sign.html" style="text-decoration: underline; color: blueviolet;">Sign In?</a></p>
+                    </div>
+            </div>
+        </form>
+        <div id="message">
+            <h4>Password must contain the following:</h4>
+            <p id="letter" class="invalid"> A <b>lowercase</b> letter</p>
+            <p id="capital" class="invalid"> A <b>capital (uppercase)</b> letter</p>
+            <p id="number" class="invalid"> A <b>number</b></p>
+            <p id="length" class="invalid"> Minimum <b>8 characters</b></p>
+        </div>
+    </div>
+    
+    <script src="../public/js/reset.js"></script>
+</body>
+</html>

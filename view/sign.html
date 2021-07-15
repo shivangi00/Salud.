@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salud. - SignUp</title>
+    <link rel="stylesheet" href="../public/css/sign.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <h1 class="nav-logo">Salud.</h1>
+            <div class="content">
+                <a href="index.html" class="nav-btn"><button class="back">Back</button></a>
+            </div>
+        </nav>
+    </header>
+
+    <!--SIGN IN FORM-->
+    <div class="form" style="margin-top: 10px;">
+        <form action="" method="post" enctype="text/plain" name="myForm" onsubmit="return(validateEmail());">
+            <div class="tab-header">
+                <div class="active">Sign Up</div>
+                <div>Sign In</div>
+            </div>
+            <div class="tab-content" style="padding-top: 45px;">
+                <div id="reg" class="tab-body active">
+                    <!-- <h2 style="margin-bottom: 25px;">Sign Up</h2> -->
+                    <div class="input-data">
+                        <input type="text" id="uname" name="uname" required>
+                        <label for="uname">Username *</label><br>
+                    </div>
+                    <div class="input-data">
+                        <input type="text" id="email" name="email" required>
+                        <label for="uname">Email *</label><br>
+                        </div>
+                    <div class="input-data">
+                        <input type="password" id="pswd" name="pswd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                        <label for="pswd" id="pswd-label">Password *</label><br>
+                    </div>
+                    <button type="button" onclick="signup();" class="button">SIGN UP</button>
+                </div>
+
+                <div id="log" class="tab-body">
+                    <!-- <h2 style="margin-bottom: 25px;">Sign In</h2> -->
+                    <div class="input-data">
+                        <input type="text" id="username" name="uname" required>
+                        <label for="uname">Username *</label><br>
+                    </div>
+                    <div class="input-data">
+                        <input type="password" id="password" class="pswd" name="pswd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                        <label for="pswd" id="pswd-label">Password *</label><br>
+                    </div>
+                    <button type="button" onclick="login();" class="button">LOGIN</button>
+                    <p>Can't remember password? <br> <a href="reset.html" style="text-decoration: underline; color: blueviolet;">Forget Password.</a>
+                    </p>
+                </div>
+            </div>
+        </form>
+        <div id="message">
+            <h4>Password must contain the following:</h4>
+            <p id="letter" class="invalid"> A <b>lowercase</b> letter</p>
+            <p id="capital" class="invalid"> A <b>capital (uppercase)</b> letter</p>
+            <p id="number" class="invalid"> A <b>number</b></p>
+            <p id="length" class="invalid"> Minimum <b>8 characters</b></p>
+        </div>
+    </div>
+
+    <script src="../public/js/sign.js"></script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+    <!--Bootsstrap Icons Link-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!--FONTAWESOME CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+</head>
+<body>
+    <!------------------------------Navbar----------------------------->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-content">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#features" class="nav-link">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#blogs" class="nav-link">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+            <a href="#" class="nav-logo">Salud.</a>
+            <div class="connect">
+                <a href=""><i class="bi bi-github"></i></a>
+                <a href=""><i class="bi bi-envelope"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-twitter"></i></a>
+            </div>
+            <a href="sign.html" class="nav-btn"><button class="sign in" id="login">Sign In</button></a>
+        </nav>
+    </header>
+    <!------------------------------Navbar Ends----------------------------->
+    
+    <section id="main" class="main">
+        <div class="col-1">
+            <div id="display">
+                <h2>"Action is the foundational key to all success"</h2>
+            </div>
+            <div class="action">
+                <!--Button to tweet the quote -->
+                <a id="tweet" href="https://twitter.com/intent/tweet?text=Greetings" data-size="large" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter"></i></a>
+                <!--Add an onclick event on 'next quote' button. Upon the click of a button, a new random quote is generated-->
+                <button id="next" class="next" onclick="genQuote();"><i class="bi bi-arrow-repeat"></i></button>
+            </div>
+            <div class="start-btn">
+                <a href="#moods"><button class="start">Get Started</button></a>
+            </div>
+        </div>
+        <div class="col-2">
+            <img src="../public/media/pexels-anna-tarazevich-4839736.jpg" alt="">
+        </div>
+    </section>
+    <!-- <h1 class="shadow">Salud. </h1> -->
+    
+    <section id="features" class="feature">
+        <div class="carousel-container">
+            <div class="carousel-wrapper">
+                <div class="card-carousel">
+                  <div class="c1">
+                    <div class="carousel-img">
+                      <img src="../public/media/running.jpeg">
+                    </div>
+                    <div class="carousel-content">
+                        <h2>Burn Your Calories</h2>
+                        <ul>
+                        <li> Choose your Workout</li>
+                        <li> Keep track of your calories</li>
+                        <li> Check your progress</li>
+                        </ul>
+                        <a href="#"><button>Try Now</button></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-carousel">
+                  <div class="c2">
+                    <div class="carousel-img">
+                        <img src="../public/media/meditation.jpeg">
+                    </div>
+                    <div class="carousel-content">
+                      <h2>Practice Mindfulness</h2>
+                      <ul>
+                        <li> Choose your meditative sessions</li>
+                        <li> Be soothed by calming music</li>
+                        <li> Keep track of your growth</li>
+                      </ul>
+                      <a href="#"><button>Try Now</button></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-carousel">
+                  <div class="c3">
+                    <div class="carousel-img">
+                        <img src="../public/media/journal.jpeg">
+                    </div>
+                    <div class="carousel-content">
+                      <h2>Know your Thoughts</h2>
+                      <ul>
+                        <li> Journal to declutter your mind</li>
+                        <li> Redirect your thoughts</li>
+                        <li> Save your journals for future</li>
+                      </ul>
+                      <a href="#"><button>Try Now</button></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-carousel">
+                  <div class="c4">
+                    <div class="carousel-img">
+                        <img src="../public/media/meditate.jpeg">
+                    </div>
+                    <div class="carousel-content">
+                      <h2>Music for Soul</h2>
+                      <ul>
+                        <li> Music for every mood</li>
+                        <li> Choose from our Playlists</li>
+                        <li> Make your own Playlists</li>
+                      </ul>
+                      <a href="#"><button>Try Now</button></a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blogs" class="blogs">
+        <!--Clamping my Style-->
+        <div class= "ex8 parent8">
+            <div class="card-purple">
+            <h1>Tips for Healthy Eyes</h1>
+            <div class="yellow-visual"><img src="../public/media/eyes.jpeg" alt=""></div>
+            <p><span datetime="2021-07-14" style="font-style: italic; font-size: 0.85rem; color: rgb(102, 102, 102);">2021-07-14 <span style="margin: auto 10px; color: white; padding: 3px 5px; background-color: rgb(241, 69, 16); font-style: normal;">Wellness</span> </span><br><br>
+             Descriptive Text. Lorem ipsum dolor sit, 
+                amet consectetur adipisicing elit. 
+                Sed est error repellat veritatis. <br>
+                <br> <a style="color: #82c; font-size: 1.08em;" href="#">Read More</a>
+            </p>
+            </div>
+            <div class="card-purple">
+                <h1>Fitness during Lockdown</h1>
+                <div class="yellow-visual"><img src="../public/media/homeExe.jpeg" alt=""></div>
+                <p><span datetime="2021-07-14" style="font-style: italic; font-size: 0.85rem; color: rgb(102, 102, 102);">2021-07-14 <span style="margin: auto 10px; color: white; padding: 3px 5px; background-color: rgb(241, 69, 16); font-style: normal;">Exercise</span> </span><br><br>
+                 Descriptive Text. Lorem ipsum dolor sit, 
+                    amet consectetur adipisicing elit. 
+                    Sed est error repellat veritatis. <br>
+                    <br> <a style="color: #82c; font-size: 1.08em;" href="#">Read More</a>
+                </p>
+            </div>
+            <div class="card-purple">
+                <h1>Deal with WFH Stress </h1>
+                <div class="yellow-visual"><img src="../public/media/stressWFH.jpeg" alt=""></div>
+                <p><span datetime="2021-07-14" style="font-style: italic; font-size: 0.85rem; color: rgb(102, 102, 102);">2021-07-14 <span style="margin: auto 10px; color: white; padding: 3px 5px; background-color: rgb(241, 69, 16); font-style: normal;">Calm</span> </span><br><br>
+                 Descriptive Text. Lorem ipsum dolor sit, 
+                    amet consectetur adipisicing elit. 
+                    Sed est error repellat veritatis. <br>
+                    <br> <a style="color: #82c; font-size: 1.08em;" href="#">Read More</a>
+                </p>
+            </div>
+        </div>
+        <a href="#" class="view-more"><button>View More</button></a>
+    </section>
+<!-- 
+    <section id="#moods" class="c-2">
+        <div class="mood-content">
+            <div class="ask-content">
+                <h2>Your <span style="color: #8c2ff7; font-weight: 600; letter-spacing: 0.06em;">Salud</span> with every <span style="color: rgb(255, 84, 16); font-weight: 600; letter-spacing: 0.06em;">Mood</span> !</h2>
+                <h3>Find your fitness plan with us.</h3>
+                <h3>Tell us how <span style="font-style: italic; text-decoration: underline;">you feel</span> ?</h3>
+            </div>
+        </div>    
+        <div class="mood-image">
+            <div class="tabs">
+                <div class="tab-header">
+                    <div class="active">
+                        <img src="../public/media/emoji-mood/sad.png" alt="sad emoji" id="show-modal">
+                    </div>    
+                    <div>
+                        <img src="../public/media/emoji-mood/dont-know.png" alt="don't know emoji">
+                    </div>
+                    <div>
+                        <img src="../public/media/emoji-mood/happy.png" alt="happy emoji">
+                    </div>  
+                    <div>
+                        <img src="../public/media/emoji-mood/elated.png" alt="excellent emoji">
+                    </div>
+                </div>
+                <div class="tab-indicator"></div>
+                <div class="tab-body">
+                    <div class="active">
+                        <p><span style="font-size: 1.2rem; color: #8c2ff7; text-decoration: underline; font-weight: 600;">Journaling</span> will be a good idea. <br> Your mind needs to be free of thoughts.</p>
+                        <a href="#"><button id="sad-btn" class="sad-ans">Start</button></a>
+                    </div>
+                    <div>
+                        <p><span style="font-size: 1.2rem; color: #8c2ff7; text-decoration: underline; font-weight: 600;;">Meditation</span> for better perception. <br> Calm mind will make better decisions.</p>
+                        <a href="#"><button id="dunno-btn" class="dunno-ans">Start</button></a>
+                    </div>
+                    <div>
+                        <p><span style="font-size: 1.2rem; color: #8c2ff7; text-decoration: underline; font-weight: 600;;">Meditation</span> for better perception. <br> Calm mind will make better decisions.</p>
+                        <a href="#"><button id="dunno-btn" class="dunno-ans">Start</button></a>
+                    </div>
+                    <div>
+                        <p><span style="font-size: 1.2rem; color: #8c2ff7; text-decoration: underline; font-weight: 600;;">Meditation</span> for better perception. <br> Calm mind will make better decisions.</p>
+                        <a href="#"><button id="dunno-btn" class="dunno-ans">Start</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+        
+    
+    
+    
+    
+    
+    <!------------Live and Get Started---------------------->
+        <!-- <div class="get-started">
+            <div class="card">
+                <div class="live-card">
+                    <h3><i class="bi bi-exclamation-circle-fill blinker"></i> <span style="color: crimson;">Live</span> COVID- 19 Updates</h3>
+                    <p>Get the latest information here </p>
+                    <p><a style="font-size: medium; color: blue; text-decoration: underline;" href="#">Know more</a></p>
+                </div>
+            </div>
+        </div> -->
+        <!-------------Live and Get Started---------------------->
+        <!--Road animation-->
+        <!-- <div class="road"> -->
+            <!--Running girl animation-->
+            <!-- <div class="runner"></div> -->
+            <!--Biker animation-->
+            <!-- <div class="biker"></div> -->
+        <!-- </div> -->
+
+    <script src="../public/js/script.js"></script>
+</body>
+</html>

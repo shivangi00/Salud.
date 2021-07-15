@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <a href="index.html" class="nav-btn"><button class="sign-in" id="login" onclick="logout();">Logout</button></a>
+    <script>
+        
+        var secret = localStorage.getItem("code");
+
+        if(secret == "secret"){
+            
+        } else{
+            alert("You have been logged out! Please Login again!");
+            window.location.href = "sign-in.html";
+        }
+
+        function logout(){            
+            var secret = localStorage.setItem("code","logout");
+            window.location.href = "sign-in.html";
+        }
+    </script>
+</body>
+</html>
