@@ -7,21 +7,25 @@
     <title>Home</title>
 </head>
 <body>
+    <h1>Welcome <span id="name"></span></h1>
     <a href="index.html" class="nav-btn"><button class="sign-in" id="login" onclick="logout();">Logout</button></a>
     <script>
-        
         var secret = localStorage.getItem("code");
 
         if(secret == "secret"){
             
         } else{
             alert("You have been logged out! Please Login again!");
-            window.location.href = "sign-in.html";
+            window.location.href = "sign.html";
         }
+
+        document.getElementById('name').innerHTML = localStorage.getItem("Username");
 
         function logout(){            
             var secret = localStorage.setItem("code","logout");
-            window.location.href = "sign-in.html";
+            localStorage.setItem("Username", "");
+            localStorage.setItem("Email", "");
+            window.location.href = "sign.html";
         }
     </script>
 </body>

@@ -14,7 +14,7 @@
     })();
     </script>
 </head>
-<body>
+<body onload="init();">
     <div class="modal-wrap">
         <div class="modal">
             <h1>Attempts Exhausted! <br> You can try again in 30 seconds!</h1>
@@ -60,8 +60,8 @@
                             <input type="password" id="pswd" class="pswd" name="pswd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                             <label for="pswd" id="pswd-label">New Password *</label><br>
                         </div>
-                        <button type="button" onclick="resetPassword();" id="pop" class="button">RESET</button>
-                        <p><a href="sign.html" style="text-decoration: underline; color: blueviolet;">Sign In?</a></p>
+                        <button type="button" onclick="resetPassword('+index+');" id="pop" class="button">RESET</button>
+                        <p>Know your password? <a href="sign.html" style="text-decoration: underline; color: blueviolet;">Sign In.</a></p>
                     </div>
             </div>
         </form>

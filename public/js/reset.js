@@ -1,3 +1,4 @@
+var idx = -1;
 var attempt = 3;
     var status = localStorage.getItem("Timeout");
 
@@ -7,6 +8,15 @@ var attempt = 3;
         start();
         attempt = 3;
     }
+
+var userData = [];
+
+function init(){
+    if(localStorage.userRecord){
+        userData = JSON.parse(localStorage.userRecord);
+        // console.log(userData[0].Password);
+    }
+}
 //=========================MODAL POP UP==================================================
 function start() {
     let modal = document.querySelector('.modal-wrap');
@@ -25,9 +35,6 @@ function start() {
         timerCount--;
         timer.innerHTML = timerCount;
     }, 1000);
-    // document.getElementById('pop').disabled = true;
-    // getMail.disabled = true;
-    // pass.disabled = true;
 }
 
 //=============================Email validation function==================================
@@ -44,8 +51,18 @@ function validateEmail() {
     return( true );
 }
 
+function findEmail(userData){
+    var email = document.getElementById("email").value;
+    //find if email is registered
+    if(userData.Email === email){
+        return true;
+    }
+    return false;
+}
+
 //===========================SEND OTP VIA EMAIL============================================
 function sendMail(){
+    const btn = document.getElementById('sendOTP');
     var emailID = document.getElementById("email").value;
     var email = localStorage.getItem("Email");
     var num = '1234567890';
@@ -54,19 +71,20 @@ function sendMail(){
     for(var i = 0; i < 6; i++){
         OTP += num[Math.floor(Math.random() * 10)];
     }
-    localStorage.setItem("OTP", OTP);
     
-    if(validateEmail() && email==emailID){
+    if(validateEmail() && userData.find(findEmail)){
+        btn.innerHTML = 'Sending...';
+        btn.style.backgroundColor = 'rgb(255, 84, 16)';
         var tempParams = {
             //   from_name: document.getElementById("fromName").value,
             to_name: localStorage.getItem("Username"),
             to_mail: emailID,
             message: OTP,
         };
-              
         emailjs.send('gmail', 'template_bgxmhac', tempParams).then(function(res){
             console.log("success", res.status);
             alert("Email sent");
+            localStorage.setItem("OTP", OTP);
             document.getElementById("verifyOTP").style.display = 'block';
             document.getElementById("getOTP").style.display = 'none';
         })
@@ -89,6 +107,7 @@ function verification(){
     var otp = document.getElementById("OTP").value;
     var otp_sent = localStorage.getItem("OTP");
     if(otp==otp_sent){
+        localStorage.setItem("OTP", "");
         document.getElementById("resetPswd").style.display = 'block';
         document.getElementById("verifyOTP").style.display = 'none';
     } else{
@@ -104,10 +123,33 @@ function resetPassword(){
         return;
     } 
     if(myInput.value.length >= 8 && (myInput.value.match(lowerCaseLetters)) && (myInput.value.match(upperCaseLetters)) && (myInput.value.match(numbers))){
-            localStorage.setItem("Password", myInput.value);            
+            // localStorage.setItem("Password", myInput.value);
+            //store data in localstorage
+            var pos = -1;
+            //some() returns the position of an object: ref video - https://www.youtube.com/watch?v=w84qY9peByk
+
+            userData.some((obj, index) =>{
+            var email = document.getElementById("email").value;
+                //find pos using email entered
+                if(obj.Email === email){
+                    pos = index;
+                    //access the password field at pos and update
+                    userData[pos].Password = myInput.value;
+                    //save the new userData entry in user
+                    var user = userData[pos];
+                    //splice -> replace the current entry by user entry
+                    userData.splice(pos, 1, user);
+                    //save changes in javascript
+                    localStorage.userRecord = JSON.stringify(userData);
+                    // console.log(userData[pos].Password);
+                    // console.log(pos);
+                    return true;
+                } return false;
+            })
+            // console.log(userData[pos]);
             alert("Password Changed Succesfully!");
             myInput.value = "";
-            window.location.href = 'sign-in.html';
+            window.location.href = 'sign.html';
     }
 }
 
