@@ -10,6 +10,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <!--FONTAWESOME CDN-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <!-- swiper css link -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- swiper-bundle -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        emailjs.init('user_5plZc6LYUQUFuAl6RPWqY')
+    </script>
 </head>
 <body>
     <!------------------------------Navbar----------------------------->
@@ -21,7 +30,7 @@
                         <a href="#" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">About</a>
+                        <a href="#about" class="nav-link">About</a>
                     </li>
                     <li class="nav-item">
                         <a href="#features" class="nav-link">Features</a>
@@ -46,11 +55,10 @@
                 <a href=""><i class="bi bi-facebook"></i></a>
                 <a href=""><i class="bi bi-twitter"></i></a>
             </div>
-            <a href="sign.html" class="nav-btn"><button class="sign in" id="login">Sign In</button></a>
+            <a href="sign.html" class="nav-btn"><button class="sign" id="login">Sign In</button></a>
         </nav>
     </header>
     <!------------------------------Navbar Ends----------------------------->
-    
     <section id="main" class="main">
         <div class="col-1">
             <div id="display">
@@ -58,9 +66,9 @@
             </div>
             <div class="action">
                 <!--Button to tweet the quote -->
-                <a id="tweet" href="https://twitter.com/intent/tweet?text=Greetings" data-size="large" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter"></i></a>
+                <a id="tweet" href="https://twitter.com/intent/tweet?text=Greetings" data-size="large" target="_blank" rel="noopener noreferrer"><button class="sign">Tweet <i class="bi bi-twitter"></i></button></a>
                 <!--Add an onclick event on 'next quote' button. Upon the click of a button, a new random quote is generated-->
-                <button id="next" class="next" onclick="genQuote();"><i class="bi bi-arrow-repeat"></i></button>
+                <button id="next" class="sign" onclick="genQuote();">Quote<i class="bi bi-arrow-repeat"></i></button>
             </div>
             <div class="start-btn">
                 <a href="#moods"><button class="start">Get Started</button></a>
@@ -72,14 +80,32 @@
     </section>
     <!-- <h1 class="shadow">Salud. </h1> -->
     
+    <section id="about" class="about">
+        <div class="about-container">
+            <div class="about-content">
+              <figure><img src="../public/media/community.jpeg"></figure>
+              <div class="about-body">
+                <h1 class="about-title">Join the <span class="nav-logo">Salud.</span> Family</h1>
+                <div class="about-text">
+                  <ul>
+                    <li>✔ Get Live COVID- 19 Updates</li>
+                    <li>✔ Choose your mindful fitness sessions</li>
+                    <li>✔ Track your health progress</li>
+                    <li>✔ Guided Journaling</li>
+                    <li>✔ Earn exclusive <span>Salud.</span> Badges</li>
+                    <li>✔ Extensive library of resources</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
+
     <section id="features" class="feature">
         <div class="carousel-container">
             <div class="carousel-wrapper">
                 <div class="card-carousel">
                   <div class="c1">
-                    <div class="carousel-img">
-                      <img src="../public/media/running.jpeg">
-                    </div>
                     <div class="carousel-content">
                         <h2>Burn Your Calories</h2>
                         <ul>
@@ -87,15 +113,15 @@
                         <li> Keep track of your calories</li>
                         <li> Check your progress</li>
                         </ul>
-                        <a href="#"><button>Try Now</button></a>
+                        <a href="#"><button class="btn-white" >Try Now</button></a>
+                    </div>
+                    <div class="carousel-img">
+                      <img src="../public/media/running.jpeg">
                     </div>
                   </div>
                 </div>
                 <div class="card-carousel">
                   <div class="c2">
-                    <div class="carousel-img">
-                        <img src="../public/media/meditation.jpeg">
-                    </div>
                     <div class="carousel-content">
                       <h2>Practice Mindfulness</h2>
                       <ul>
@@ -103,15 +129,15 @@
                         <li> Be soothed by calming music</li>
                         <li> Keep track of your growth</li>
                       </ul>
-                      <a href="#"><button>Try Now</button></a>
+                      <a href="#"><button class="btn-white">Try Now</button></a>
+                    </div>
+                    <div class="carousel-img">
+                        <img src="../public/media/meditation.jpeg">
                     </div>
                   </div>
                 </div>
                 <div class="card-carousel">
                   <div class="c3">
-                    <div class="carousel-img">
-                        <img src="../public/media/journal.jpeg">
-                    </div>
                     <div class="carousel-content">
                       <h2>Know your Thoughts</h2>
                       <ul>
@@ -119,15 +145,15 @@
                         <li> Redirect your thoughts</li>
                         <li> Save your journals for future</li>
                       </ul>
-                      <a href="#"><button>Try Now</button></a>
+                      <a href="#"><button class="btn-white">Try Now</button></a>
+                    </div>
+                    <div class="carousel-img">
+                        <img src="../public/media/journal.jpeg">
                     </div>
                   </div>
                 </div>
                 <div class="card-carousel">
                   <div class="c4">
-                    <div class="carousel-img">
-                        <img src="../public/media/meditate.jpeg">
-                    </div>
                     <div class="carousel-content">
                       <h2>Music for Soul</h2>
                       <ul>
@@ -135,7 +161,10 @@
                         <li> Choose from our Playlists</li>
                         <li> Make your own Playlists</li>
                       </ul>
-                      <a href="#"><button>Try Now</button></a>
+                      <a href="#"><button class="btn-white">Try Now</button></a>
+                    </div>
+                    <div class="carousel-img">
+                        <img src="../public/media/meditate.jpeg">
                     </div>
                   </div>
                 </div>
@@ -145,93 +174,124 @@
 
     <section id="blogs" class="blogs">
         <!--Clamping my Style-->
-        <div class= "ex8 parent8">
-            <div class="card-purple">
-            <h1>Tips for Healthy Eyes</h1>
-            <div class="yellow-visual"><img src="../public/media/eyes.jpeg" alt=""></div>
-            <p><span datetime="2021-07-14" style="font-style: italic; font-size: 0.85rem; color: rgb(102, 102, 102);">2021-07-14 <span style="margin: auto 10px; color: white; padding: 3px 5px; background-color: rgb(241, 69, 16); font-style: normal;">Wellness</span> </span><br><br>
-             Descriptive Text. Lorem ipsum dolor sit, 
-                amet consectetur adipisicing elit. 
-                Sed est error repellat veritatis. <br>
-                <br> <a style="color: #82c; font-size: 1.08em;" href="#">Read More</a>
-            </p>
+        <div class="container">
+            <div class="swiper-container mySwiper my-5 py-5">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide d-flex justify-content-center" style="margin: 0px;">
+                        <div class= "ex8 parent8">
+                            <div class="card-purple card-body">
+                                <h1 class="card-title">Tips for Healthy Eyes</h1>
+                                <div class="yellow-visual"><img src="../public/media/eyes.jpeg" alt=""></div>
+                                <span datetime="2021-07-14" style="font-style: italic; font-size: 0.85rem; color: rgb(102, 102, 102);">2021-07-14 <span style="margin: auto 10px; color: white; padding: 4px 8px; background-color: rgb(241, 69, 16); font-style: normal; border-radius: 1em;">Wellness</span> </span>
+                                <p class="card-text"><br>
+                                Descriptive Text. Lorem ipsum dolor sit, 
+                                    amet consectetur adipisicing elit. 
+                                    Sed est error repellat veritatis. <br>
+                                </p>
+                                <a style="color: #82c; padding-top: 5%; font-size: 1em;" href="#">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide d-flex justify-content-center" style="margin: 0px;">
+                        <div class= "ex8 parent8">
+                            <div class="card-purple card-body">
+                                <h1 class="card-title">Fitness at Home</h1>
+                                <div class="yellow-visual"><img src="../public/media/homeExe.jpeg" alt=""></div>
+                                <span datetime="2021-07-14" style="font-style: italic; font-size: 0.85rem; color: rgb(102, 102, 102);">2021-07-14 <span style="margin: auto 10px; color: white; padding: 4px 8px; background-color: rgb(241, 69, 16); font-style: normal; border-radius: 1em;">Exercise</span> </span>
+                                <p class="card-text"><br>
+                                 Descriptive Text. Lorem ipsum dolor sit, 
+                                    amet consectetur adipisicing elit. 
+                                    Sed est error repellat veritatis. <br>
+                                </p>
+                                <a style="color: #82c; padding-top: 5%; font-size: 1em;" href="#">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide d-flex justify-content-center" style="margin: 0px;">
+                        <div class= "ex8 parent8">
+                            <div class="card-purple card-body">
+                                <h1 class="card-title">Deal with WFH Stress </h1>
+                                <div class="yellow-visual"><img src="../public/media/stressWFH.jpeg" alt=""></div>
+                                <span datetime="2021-07-14" class="date">2021-07-14 <span class="tag">Calm</span> </span>
+                                <p class="card-text"><br>
+                                 Descriptive Text. Lorem ipsum dolor sit, 
+                                    amet consectetur adipisicing elit. 
+                                    Sed est error repellat veritatis. <br>
+                                </p>
+                                <a style="color: #82c; padding-top: 5%; font-size: 1em;" href="#">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide d-flex justify-content-center" style="margin: 0px;">
+                        <div class= "ex8 parent8">
+                            <div class="card-purple card-body">
+                                <h1 class="card-title">Tips for Healthy Eyes</h1>
+                                <div class="yellow-visual"><img src="../public/media/eyes.jpeg" alt=""></div>
+                                <span datetime="2021-07-14" style="font-style: italic; font-size: 0.85rem; color: rgb(102, 102, 102);">2021-07-14 <span style="margin: auto 10px; color: white; padding: 4px 8px; background-color: rgb(241, 69, 16); font-style: normal; border-radius: 1em;">Wellness</span> </span>
+                                <p class="card-text"><br>
+                                Descriptive Text. Lorem ipsum dolor sit, 
+                                    amet consectetur adipisicing elit. 
+                                    Sed est error repellat veritatis. <br>
+                                </p>
+                                <a style="color: #82c; padding-top: 5%; font-size: 1em;" href="#">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--  for left and right navigation buttons -->
+
+                <div class="swiper-button-next" style="margin-left: 5%; font-weight: 800; color: #6d6c70;"></div>
+                <div class="swiper-button-prev" style="margin-right: 5%; font-weight: 800; color: #6d6c70;"></div>
+
             </div>
-            <div class="card-purple">
-                <h1>Fitness during Lockdown</h1>
-                <div class="yellow-visual"><img src="../public/media/homeExe.jpeg" alt=""></div>
-                <p><span datetime="2021-07-14" style="font-style: italic; font-size: 0.85rem; color: rgb(102, 102, 102);">2021-07-14 <span style="margin: auto 10px; color: white; padding: 3px 5px; background-color: rgb(241, 69, 16); font-style: normal;">Exercise</span> </span><br><br>
-                 Descriptive Text. Lorem ipsum dolor sit, 
-                    amet consectetur adipisicing elit. 
-                    Sed est error repellat veritatis. <br>
-                    <br> <a style="color: #82c; font-size: 1.08em;" href="#">Read More</a>
-                </p>
-            </div>
-            <div class="card-purple">
-                <h1>Deal with WFH Stress </h1>
-                <div class="yellow-visual"><img src="../public/media/stressWFH.jpeg" alt=""></div>
-                <p><span datetime="2021-07-14" style="font-style: italic; font-size: 0.85rem; color: rgb(102, 102, 102);">2021-07-14 <span style="margin: auto 10px; color: white; padding: 3px 5px; background-color: rgb(241, 69, 16); font-style: normal;">Calm</span> </span><br><br>
-                 Descriptive Text. Lorem ipsum dolor sit, 
-                    amet consectetur adipisicing elit. 
-                    Sed est error repellat veritatis. <br>
-                    <br> <a style="color: #82c; font-size: 1.08em;" href="#">Read More</a>
-                </p>
-            </div>
+            <a href="#" class="view-more"><button class="sign">View More</button></a>
         </div>
-        <a href="#" class="view-more"><button>View More</button></a>
     </section>
-<!-- 
-    <section id="#moods" class="c-2">
-        <div class="mood-content">
-            <div class="ask-content">
-                <h2>Your <span style="color: #8c2ff7; font-weight: 600; letter-spacing: 0.06em;">Salud</span> with every <span style="color: rgb(255, 84, 16); font-weight: 600; letter-spacing: 0.06em;">Mood</span> !</h2>
-                <h3>Find your fitness plan with us.</h3>
-                <h3>Tell us how <span style="font-style: italic; text-decoration: underline;">you feel</span> ?</h3>
-            </div>
-        </div>    
-        <div class="mood-image">
-            <div class="tabs">
-                <div class="tab-header">
-                    <div class="active">
-                        <img src="../public/media/emoji-mood/sad.png" alt="sad emoji" id="show-modal">
-                    </div>    
-                    <div>
-                        <img src="../public/media/emoji-mood/dont-know.png" alt="don't know emoji">
-                    </div>
-                    <div>
-                        <img src="../public/media/emoji-mood/happy.png" alt="happy emoji">
-                    </div>  
-                    <div>
-                        <img src="../public/media/emoji-mood/elated.png" alt="excellent emoji">
-                    </div>
+
+    <footer class="footer">
+        <div class="footer-body">
+            <div class="footer-1">
+                <h2 class="footer-title"><span class="nav-logo">Salud.</span></h2>
+                <div class="footer-text">
+                    <p>Your fitness and wellness partner.<br>
+                       Built carefully to meet your wellness need. 
+                    </p>
+                    <p class="footer-links">        
+                        <a href=""><i class="bi bi-github"></i></a>
+                        <a href=""><i class="bi bi-envelope"></i></a>
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-twitter"></i></a>
+                    </p>
                 </div>
-                <div class="tab-indicator"></div>
-                <div class="tab-body">
-                    <div class="active">
-                        <p><span style="font-size: 1.2rem; color: #8c2ff7; text-decoration: underline; font-weight: 600;">Journaling</span> will be a good idea. <br> Your mind needs to be free of thoughts.</p>
-                        <a href="#"><button id="sad-btn" class="sad-ans">Start</button></a>
-                    </div>
-                    <div>
-                        <p><span style="font-size: 1.2rem; color: #8c2ff7; text-decoration: underline; font-weight: 600;;">Meditation</span> for better perception. <br> Calm mind will make better decisions.</p>
-                        <a href="#"><button id="dunno-btn" class="dunno-ans">Start</button></a>
-                    </div>
-                    <div>
-                        <p><span style="font-size: 1.2rem; color: #8c2ff7; text-decoration: underline; font-weight: 600;;">Meditation</span> for better perception. <br> Calm mind will make better decisions.</p>
-                        <a href="#"><button id="dunno-btn" class="dunno-ans">Start</button></a>
-                    </div>
-                    <div>
-                        <p><span style="font-size: 1.2rem; color: #8c2ff7; text-decoration: underline; font-weight: 600;;">Meditation</span> for better perception. <br> Calm mind will make better decisions.</p>
-                        <a href="#"><button id="dunno-btn" class="dunno-ans">Start</button></a>
-                    </div>
+            </div>
+            <div class="footer-2">
+                <!-- <h2 class="footer-title">Contact</h2> -->
+                <div class="footer-text">
+                    <form action="" method="POST" enctype="text/plain" name="myForm" id="form" onsubmit="return(validateEmail())">
+                        <div class="input-data">
+                            <input type="text" id="from_mail" name="from_mail" required>
+                            <label for="from_mail">Email *</label><br>
+                          </div>
+                          <div class="input-data">
+                          <textarea type="text" id="message" name="message" required></textarea>
+                          <label for="message">Your Message *</label>
+                          </div>
+                        
+                          <input class="btn-send" type="submit" id="button" value="Send Email" >
+                    </form>
                 </div>
             </div>
         </div>
-    </section> -->
-        
-    
-    
-    
-    
-    
+        <div class="footer-end">
+            <medium>Copyright 2021 &copy; <span class="nav-logo"> Salud.</span></medium>
+        </div>
+
+    </footer>
+
     <!------------Live and Get Started---------------------->
         <!-- <div class="get-started">
             <div class="card">
@@ -250,7 +310,7 @@
             <!--Biker animation-->
             <!-- <div class="biker"></div> -->
         <!-- </div> -->
-
+        <!--EmailJS link-->
     <script src="../public/js/script.js"></script>
 </body>
 </html>

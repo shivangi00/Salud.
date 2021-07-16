@@ -296,11 +296,6 @@ input:valid ~label {
     padding:  150px 50px;
 }
 
-.timer{
-    padding: 20px;
-    font-size: 2em;
-}
-
 #loading-bar-spinner.spinner {
     left: 50%;
     margin-left: -20px;

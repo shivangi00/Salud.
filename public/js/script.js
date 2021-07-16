@@ -1,3 +1,36 @@
+//=============================Email validation function==================================
+function validateEmail() {
+    var emailID = document.myForm.from_mail.value;
+    atpos = emailID.indexOf("@");
+    dotpos = emailID.lastIndexOf(".");
+    
+    if (atpos < 1 || ( dotpos - atpos < 2 )) {
+        alert("Please enter correct email ID");
+        document.myForm.email.focus();
+        return false;
+    }
+    return( true );
+}
+const btn = document.getElementById('button');
+document.getElementById('form').addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   const serviceID = 'default_service';
+   const templateID = 'template_uigtzob';
+
+   if(validateEmail() && document.getElementById("message").value != ""){
+    btn.value = 'Sending...';
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Send Email';
+      alert('Sent!');
+    }, (err) => {
+      btn.value = 'Send Email';
+      alert(JSON.stringify(err));
+    });
+    }
+});
+
 /*If user is logged out or hasn't logged in yet*/
 var status = localStorage.getItem("code");
 if(status == "logout" || status == ""){
@@ -6,6 +39,25 @@ if(status == "logout" || status == ""){
     alert("Please Logout First!");
     window.location.href = "home.html";
 }
+
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    slidesPerGroup: 1,
+    breakpoints: {
+     768: {
+        slidesPerView: 2,
+      },
+      991: {
+        slidesPerView: 3,
+      },
+    },
+    loop: true,
+    navigation:{
+      nextEl:".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    }
+});
 
 /*Random Quotes Generator Quotes*/
 var quotes = [
@@ -19,22 +71,22 @@ var quotes = [
 ];
 
 /*For Moods tabs*/
-let tabHeader = document.getElementsByClassName("tab-header")[0];
-let tabInd = document.getElementsByClassName("tab-indicator")[0];
-let tabBody = document.getElementsByClassName("tab-body")[0];
+// let tabHeader = document.getElementsByClassName("tab-header")[0];
+// let tabInd = document.getElementsByClassName("tab-indicator")[0];
+// let tabBody = document.getElementsByClassName("tab-body")[0];
 
-let tabsPane = tabHeader.getElementsByTagName("div");
+// let tabsPane = tabHeader.getElementsByTagName("div");
 
-for(let i = 0; i < tabsPane.length; i++){
-    tabsPane[i].addEventListener("click", function(){
-        tabHeader.getElementsByClassName("active")[0].classList.remove("active");
-        tabsPane[i].classList.add("active");
-        tabBody.getElementsByClassName("active")[0].classList.remove("active");
-        tabBody.getElementsByTagName("div")[i].classList.add("active");
+// for(let i = 0; i < tabsPane.length; i++){
+//     tabsPane[i].addEventListener("click", function(){
+//         tabHeader.getElementsByClassName("active")[0].classList.remove("active");
+//         tabsPane[i].classList.add("active");
+//         tabBody.getElementsByClassName("active")[0].classList.remove("active");
+//         tabBody.getElementsByTagName("div")[i].classList.add("active");
 
-        tabInd.style.left =  `calc(calc(100% / 4) * ${i})`;
-    });
-}
+//         tabInd.style.left =  `calc(calc(100% / 4) * ${i})`;
+//     });
+// }
 
 /*Responsive hamburger menu*/
 const hamburger = document.querySelector(".hamburger");
@@ -48,7 +100,7 @@ function mobileMenu(){
     navMenu.classList.toggle("active");
 }
 
-navLink.forEach(n => n.addEvenetListener("click", closeMenu));
+navLink.forEach((n) => n.addEvenetListener("click", closeMenu));
 
 function closeMenu(){
     hamburger.classList.remove("active");
@@ -65,5 +117,3 @@ function genQuote() {
     var tweetButton=document.getElementById("tweet");
     tweetButton.href="https://twitter.com/intent/tweet?text="+quotes[randNum];
 }
-
-
