@@ -15,6 +15,12 @@ function init(){
     if(localStorage.userRecord){
         userData = JSON.parse(localStorage.userRecord);
         // console.log(userData[0].Password);
+        var mode = localStorage.getItem("Theme");
+    if(mode == "light"){
+    lightMode();
+    } else{
+    darkMode();
+    }
     }
 }
 //=========================MODAL POP UP==================================================

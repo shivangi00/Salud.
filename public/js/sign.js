@@ -122,7 +122,14 @@ function init(){
     if(localStorage.userRecord){
         userData = JSON.parse(localStorage.userRecord);
     }
+    var mode = localStorage.getItem("Theme");
+    if(mode == "light"){
+    lightMode();
+    } else{
+    darkMode();
+    }
 }
+
 function signup(){
     var uname = document.getElementById("uname").value;
     var email = document.getElementById("email").value;

@@ -1,3 +1,37 @@
+var mode = localStorage.getItem("Theme");
+if(mode == "light"){
+  lightMode();
+} else{
+  darkMode();
+}
+//   var mode = localStorage.getItem("Theme");
+//   mode == "light" ? darkMode() : lightMode();
+
+//=============================Theme toggle==============================================
+function toggleTheme(){
+  if(localStorage.getItem("Theme") == "light"){
+    darkMode();
+  }else{
+    lightMode();
+  }
+}
+
+function darkMode(){
+  document.body.classList.add("dark");
+  document.body.classList.remove("light");
+  document.getElementById('nav').classList.remove('light');
+  document.getElementById('nav').classList.add('dark');
+  localStorage.setItem("Theme", "dark");
+}
+
+function lightMode(){
+  document.body.classList.add("light");
+  document.body.classList.remove("dark");
+  document.getElementById('nav').classList.add('light');
+  document.getElementById('nav').classList.remove('dark');
+  localStorage.setItem("Theme", "light");
+}
+
 //=============================Email validation function==================================
 function validateEmail() {
     var emailID = document.myForm.from_mail.value;
@@ -36,7 +70,7 @@ var status = localStorage.getItem("code");
 if(status == "logout" || status == ""){
     localStorage.setItem("code", "");
 } else{
-    alert("Please Logout First!");
+    // alert("Please Logout First!");
     window.location.href = "home.html";
 }
 
@@ -58,6 +92,47 @@ var swiper = new Swiper(".mySwiper", {
       prevEl: ".swiper-button-prev",
     }
 });
+
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 10000); // Change image every 2 seconds
+}
+
+function currentSlide(n) {
+  showSlidesDot(slideIndex = n);
+}
+
+function showSlidesDot(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
 
 /*Random Quotes Generator Quotes*/
 var quotes = [
