@@ -192,7 +192,7 @@ function login(){
     if(findUser()){
         // alert("Login successful");
         localStorage.setItem("code", "secret");
-        window.location.href = "../view/user.html";
+        window.location.href = "user.html";
     } else{
         alert("Username or Password is incorrect");
     }
