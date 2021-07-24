@@ -5,28 +5,213 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <!--Bootsstrap Icons Link-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../public/css/home.css">
 </head>
-<body>
-    <h1>Welcome <span id="name"></span></h1>
-    <a href="index.html" class="nav-btn"><button class="sign-in" id="login" onclick="logout();">Logout</button></a>
-    <script>
-        var secret = localStorage.getItem("code");
+<body onload="init();">
+    <aside id="aside" class="lightA">
+        <div class="nav">
+            <div class="nav-title">
+                <h1>Salud.</h1><br>
+                <h3>Welcome <span id="name"></span></h3><br>
+                <p>
+                    <button class="btn-primary" id="login" onclick="logout();">Logout</button>
+                    <button class="btn-primary" onclick="toggleTheme();"><i class="bi bi-circle-half"></i></button>
+                </p>
+            </div>
+            <div class="nav-body">
+                <ul class="nav-content">
+                    <li class="nav-item">
+                        <button onclick="show(event, 'Profile');" class="tab-link active"><i class="bi bi-person-fill"></i> Profile</button>
+                    </li>
+                    <li class="nav-item">
+                        <button onclick="show(event, 'Dashboard');" class="tab-link"><i class="bi bi-graph-up"></i> Dashboard</button>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"><i class="bi bi-grid-3x3-gap-fill"></i> Features</a>
+                        <ul class="sub-nav">
+                            <li class="nav-item">
+                                <button onclick="show(event, 'Workout');" class="tab-link">Exercise</button>
+                            </li>
+                            <li class="nav-item">
+                                <button onclick="show(event, 'Meditate');" class="tab-link">Meditate</button>
+                            </li>
+                            <li class="nav-item">
+                                <button onclick="show(event, 'Journal');" class="tab-link">Journal</button>
+                            </li>
+                            <li class="nav-item">
+                                <button onclick="show(event, 'Music Board');" class="tab-link">Music Board</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"><i class="bi bi-globe2"></i> Trending</a>
+                        <ul class="sub-nav">
+                            <li class="nav-item">
+                                <button onclick="show(event, 'Salud. TV');" class="tab-link">Salud. TV</button>
+                            </li>
+                            <li class="nav-item">
+                                <button onclick="show(event, 'Salud. Blogs');" class="tab-link">Salud. Blogs</button>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-footer">
+                <a href="" class="nav-link"><i class="bi bi-github"></i></a>
+                <a href="" class="nav-link"><i class="bi bi-envelope"></i></a>
+                <a href="" class="nav-link"><i class="bi bi-facebook"></i></a>
+                <a href="" class="nav-link"><i class="bi bi-twitter"></i></a>
+            </div>
+        </div>
+    </aside>
 
-        if(secret == "secret"){
-            
-        } else{
-            alert("You have been logged out! Please Login again!");
-            window.location.href = "sign.html";
-        }
+    <main>
+        <section id="Profile" class="tabcontent active">
+            <div class="container">
+                <h1><span id="pname"></span>'s Profile</h1>
+                <div class="container-body">
+                    <div>
+                        <medium>Username</medium>
+                        <p id="uname" contenteditable="true">Hi!</p>
+                    </div>
+                    <div>
+                        <medium>E-mail</medium>
+                        <p contenteditable="false"><i class="bi bi-lock-fill"></i>&nbsp;<span id="email">Hi!</span></p>
+                    </div>
+                </div>
+                <button class="btn-primary" onclick="update();">Update</button>
+            </div>
+        </section>
+        <section id="Dashboard" class="tabcontent">
 
-        document.getElementById('name').innerHTML = localStorage.getItem("Username");
+        </section>
+        <section id="Workout" class="tabcontent">
 
-        function logout(){            
-            var secret = localStorage.setItem("code","logout");
-            localStorage.setItem("Username", "");
-            localStorage.setItem("Email", "");
-            window.location.href = "sign.html";
-        }
-    </script>
+        </section>
+        <section id="Meditate" class="tabcontent">
+
+        </section>
+        <section id="Journal" class="tabcontent">
+            <div class="container">
+                <h1>Journal</h1>
+                <div class="container-body">                
+                    <div class="toolbar">
+                        <ul class="tool-list">
+                        <li class="tool">
+                            <button 
+                            type="button" 
+                            data-command='justifyLeft'
+                            class="tool--btn">
+                            left
+                            </button>
+                        </li>
+                        <li class="tool">
+                            <button 
+                            type="button" 
+                            data-command='justifyCenter' 
+                            class="tool--btn">
+                            center
+                            </button>
+                        </li>
+                        <li class="tool">
+                            <button 
+                            type="button" 
+                            data-command="bold" 
+                            class="tool--btn">
+                            bold
+                            </button>
+                        </li>
+                        <li class="tool">
+                            <button 
+                            type="button" 
+                            data-command="quote" 
+                            class="tool--btn">
+                            quote
+                            </button>
+                        </li>
+                        <li class="tool">
+                            <button 
+                            type="button" 
+                            data-command="italic"
+                            class="tool--btn">
+                            italic
+                            </button>
+                        </li>
+                        <li class="tool">
+                            <button 
+                            type="button" 
+                            data-command="underline"
+                            class="tool--btn">
+                            underline
+                            </button>
+                        </li>
+                        <li class="tool">
+                            <button 
+                            type="button" 
+                            data-command="insertOrderedList"
+                            class="tool--btn">
+                            ol
+                            </button>
+                        </li>
+                        <li class="tool">
+                            <button 
+                            type="button" 
+                            data-command="insertUnorderedList"
+                            class="tool--btn">
+                            ul
+                            </button>
+                        </li>
+                        <li class="tool">
+                            <button 
+                            type="button" 
+                            data-command="createlink" 
+                            class="tool--btn">
+                            link
+                            </button>
+                        </li>
+                        </ul>
+                    </div>
+                    
+                    <div id="output" contenteditable="true"></div>    
+                </div>
+                <button class="btn-primary" onclick=""></button>
+            </div>
+        </section>
+        <section id="Music Board" class="tabcontent">
+            <div class="container">
+                
+                <div class="container-body">
+                    
+                </div>
+                <button class="btn-primary" onclick=""></button>
+            </div>
+        </section>
+        <section id="Salud. TV" class="tabcontent">
+            <div class="container">
+                
+                <div class="container-body">
+                    
+                </div>
+                <button class="btn-primary" onclick=""></button>
+            </div>
+        </section>
+        <section id="Salud. Blogs" class="tabcontent">
+            <div class="container">
+                
+                <div class="container-body">
+                    
+                </div>
+                <button class="btn-primary" onclick=""></button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+            <p>Copyright 2021 &copy; <span class="nav-logo"> Salud.</span></p>
+    </footer>
+
+    <script src="../public/js/home.js"></script>
 </body>
 </html>

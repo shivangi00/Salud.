@@ -35,11 +35,11 @@ button:hover{
     place-content: center;
 }
 
-form{
+form, #message{
     font-size: small;
     width: 50%;
     background-color: #ffffffcc;
-    box-shadow: 0px 0px 10px 4px rgba(243, 219, 255, 0.432);
+    box-shadow: 0px 0px 10px 4px rgba(244, 221, 255, 0.432);
 }
 
 form div{
@@ -63,7 +63,6 @@ form div label{
 }
 
 .tab-header > div{
-    /* margin: 3% 0; */
     font-size: large;
     width:50%;
     float:left;
@@ -129,13 +128,10 @@ input:valid ~label {
 
 /* The message box is shown when the user clicks on the password field */
 #message {
-    color: #000;
     position: relative;
     margin-left: 30px;
     padding: 20px;
     font-size: medium;
-    background-color: #ffffffc4;
-    box-shadow: 0px 0px 10px 4px rgba(46, 42, 42, 0.199);
 }
   
   #message p{
@@ -226,6 +222,9 @@ input:valid ~label {
         font-size: small;
     }
     .form{
+        display: flex;
+        padding: 20% 30px 3%;
+        place-content: center;
         flex-direction: column;
     }
 

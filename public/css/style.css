@@ -7,13 +7,13 @@
 }
 
 .dark{
-    font-family: 'Roboto', sans-serif;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;;
     background-color: rgb(26, 13, 39);
     color: #f5ebff;
 }
 
 .light{
-    font-family: 'Roboto', sans-serif;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;;
     background-color: white;
     color: #101010;
 }
@@ -454,7 +454,6 @@ color:#ffffff;
     .date{
       font-style: italic; 
       font-size: 0.85rem; 
-      color: rgb(102, 102, 102);
     }
 
     .tag{

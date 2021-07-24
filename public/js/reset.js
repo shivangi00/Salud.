@@ -14,13 +14,13 @@ var userData = [];
 function init(){
     if(localStorage.userRecord){
         userData = JSON.parse(localStorage.userRecord);
-        // console.log(userData[0].Password);
-        var mode = localStorage.getItem("Theme");
+    }
+    // console.log(userData[0].Password);
+    var mode = localStorage.getItem("Theme");
     if(mode == "light"){
     lightMode();
     } else{
     darkMode();
-    }
     }
 }
 //=========================MODAL POP UP==================================================
@@ -65,12 +65,27 @@ function findEmail(userData){
     }
     return false;
 }
+var user_name;
+function findUsername(){
+    var pos = -1;
+            //some() returns the position of an object: ref video - https://www.youtube.com/watch?v=w84qY9peByk
+    userData.some((obj, index) =>{
+        var email = document.getElementById("email").value;
+        //find pos using email entered
+        if(obj.Email === email){
+            pos = index;
+            //access the username field at pos
+            user_name = userData[pos].Username;
+            return true;
+        } return false;
+    })
+}
 
 //===========================SEND OTP VIA EMAIL============================================
 function sendMail(){
     const btn = document.getElementById('sendOTP');
     var emailID = document.getElementById("email").value;
-    var email = localStorage.getItem("Email");
+    // var email = localStorage.getItem("Email");
     var num = '1234567890';
     var OTP = '';
 
@@ -81,9 +96,10 @@ function sendMail(){
     if(validateEmail() && userData.find(findEmail)){
         btn.innerHTML = 'Sending...';
         btn.style.backgroundColor = 'rgb(255, 84, 16)';
+        userData.find(findUsername);
         var tempParams = {
             //   from_name: document.getElementById("fromName").value,
-            to_name: localStorage.getItem("Username"),
+            to_name: user_name,
             to_mail: emailID,
             message: OTP,
         };

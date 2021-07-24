@@ -1,0 +1,180 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.dark{
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;;
+    background-color: rgb(26, 13, 39);
+    color: whitesmoke;
+}
+
+.light{
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+    background-color: white;
+    color: #221b2b;
+}
+
+.lightA{
+    background-color: #fef8dd;
+    color: #221b2b;
+}
+
+.darkA{
+    background-color: #221b2b;
+    color: whitesmoke;
+}
+
+body{
+    width: 1fr;
+}
+
+aside{
+    z-index: 5;
+    width: calc(100% / 7);
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+
+main{
+    margin: 2% 0 0 22%;
+    width: calc(100% / 7 * 5);
+    height: 88vh;
+    padding: 20px;
+    /* border: 1px solid rgb(214, 214, 241); */
+}
+
+footer{
+    text-align: center;
+    left: calc(100% / 7);
+    width: calc(100% / 7 * 6);
+    padding: 10px 0;
+    bottom: 0;
+    position: fixed;
+}
+
+li{
+    list-style: none;
+    font-size: 0.95em;
+    padding: 8px 13px;
+}
+
+.sub-nav li{
+    border: none;
+    padding: 10px 20px 0;
+}
+
+.tab-link.active, .btn-link:hover{
+    /* color: #ec2b75; */
+    color: rgb(149, 64, 206);
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+button{
+    outline: none;
+    border: none;
+    background: transparent;
+    border-radius: none;
+    cursor: pointer;
+    font-size: 1em;
+    color: inherit;
+}
+
+.btn-primary{
+    padding: 8px 10px;
+    border: 1px solid rgb(214, 214, 241);
+    transition: all 0.5s;
+}
+
+.btn-primary:hover{
+    border: 1px solid rgb(149, 64, 206);
+}
+
+.nav div:not(.nav-footer){
+    padding: 7px 0;
+    display: flex;
+    place-content: center;
+    flex-direction: column;
+}
+
+.nav-title{
+    text-align: center;
+}
+
+.nav-footer{
+    position: absolute;
+    width: 100%;
+    bottom: 1rem;
+    text-align: center;
+}
+
+.nav-footer a{
+    padding: 3.5px;
+}
+
+.container h1{
+    text-align: center;
+    font-weight: 400;
+    font-size: 2.5em;
+    letter-spacing: 0.05em;
+}
+
+.container-body{
+    display: flex;
+    place-content: center;
+    column-gap: 10%; 
+    padding: 50px 0;
+    color: inherit;
+    background-color: inherit;
+}
+
+.container-body div{
+    width: 50%;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.container-body p, .container-body select{
+    margin: 10px 0;
+    padding: 5px;
+    border: 1px solid rgb(214, 214, 241);
+}
+
+.tabcontent{
+    display: none;
+}
+
+.tabcontent.active{
+    display: block;
+}
+
+.tool-list {
+  display: flex;
+  flex-flow: row nowrap;
+  list-style: none;
+  padding: 0;
+  margin: 1rem;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.tool--btn {
+  display: block;
+  border: none;
+  padding: .5rem;
+  font-size: 20px;
+}
+
+#output {
+  height: 400px; 
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  margin: 1rem;
+  padding: 1rem;
+}
