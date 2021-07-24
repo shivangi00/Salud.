@@ -8,7 +8,7 @@ if(secret == "secret"){
 }
 
 function logout(){            
-    window.location.href = "index.html";
+    window.location.href = "../index.html";
     localStorage.setItem("code","logout");
     localStorage.setItem("Username", "");
     localStorage.setItem("Email", "");
