@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; font-src 'self' data: fonts.gstatic.com;">
     <title>Index</title>
     <link rel="stylesheet" href="public/css/style.css">
     <!--Bootsstrap Icons Link-->
@@ -118,7 +119,7 @@
         <div class="slideshow-container">
 
             <div class="mySlides fade">
-              <img class="image" src="public/media/exerciseH.jpeg" style="width:100%">
+              <img class="image" src="public/media/exerciseH.jpeg">
               <div class="middleT">
               <div class="numbertext">1 / 4</div>
               <div class="text">
@@ -136,7 +137,7 @@
             </div>
             
             <div class="mySlides fade">
-              <img class="image" src="public/media/meditateH.jpeg" style="width:100%">
+              <img class="image" src="public/media/meditateH.jpeg">
               <div class="middleT">
               <div class="numbertext">2 / 4</div>
               <div class="text">
@@ -154,7 +155,7 @@
             </div>
             
             <div class="mySlides fade">
-              <img class="image" src="public/media/journalH.jpg" style="width:100%">
+              <img class="image" src="public/media/journalH.jpg">
               <div class="middleT">
               <div class="numbertext">3 / 4</div>
               <div class="text">
@@ -172,7 +173,7 @@
             </div>
             
             <div class="mySlides fade">
-              <img class="image" src="public/media/music.jpeg" style="width:100%">
+              <img class="image" src="public/media/music.jpeg">
               <div class="middleT">
               <div class="numbertext">4 / 4</div>
               <div class="text">
@@ -192,7 +193,7 @@
             </div>
             <br>
             
-            <div style="text-align:center">
+            <div class="dots">
               <span class="dot" onclick="currentSlide(1)"></span> 
               <span class="dot" onclick="currentSlide(2)"></span> 
               <span class="dot" onclick="currentSlide(3)"></span>
@@ -205,7 +206,7 @@
         <div class="container">
             <div class="swiper-container mySwiper my-5 py-5">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide d-flex justify-content-center" style="margin: 0px;">
+                    <div class="swiper-slide d-flex justify-content-center">
                         <div class= "ex8 parent8">
                             <div class="card-purple card-body">
                                 <h1 class="card-title">Tips for Healthy Eyes</h1><hr>
@@ -216,12 +217,12 @@
                                     amet consectetur adipisicing elit. 
                                     Sed est error repellat veritatis. <br>
                                 </p>
-                                <a style="color: rgb(241, 69, 16); padding-top: 5%; font-size: 1em;" href="#">Read More</a>
+                                <a class="read" href="#">Read More</a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="swiper-slide d-flex justify-content-center" style="margin: 0px;">
+                    <div class="swiper-slide d-flex justify-content-center">
                         <div class= "ex8 parent8">
                             <div class="card-purple card-body">
                                 <h1 class="card-title">Fitness at Home</h1><hr>
@@ -232,12 +233,12 @@
                                     amet consectetur adipisicing elit. 
                                     Sed est error repellat veritatis. <br>
                                 </p>
-                                <a style="color: rgb(241, 69, 16); padding-top: 5%; font-size: 1em;" href="#">Read More</a>
+                                <a class="read" href="#">Read More</a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="swiper-slide d-flex justify-content-center" style="margin: 0px;">
+                    <div class="swiper-slide d-flex justify-content-center">
                         <div class= "ex8 parent8">
                             <div class="card-purple card-body">
                                 <h1 class="card-title">Deal with WFH Stress </h1><hr>
@@ -248,12 +249,12 @@
                                     amet consectetur adipisicing elit. 
                                     Sed est error repellat veritatis. <br>
                                 </p>
-                                <a style="color: rgb(241, 69, 16); padding-top: 5%; font-size: 1em;" href="#">Read More</a>
+                                <a class="read" href="#">Read More</a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="swiper-slide d-flex justify-content-center" style="margin: 0px;">
+                    <div class="swiper-slide d-flex justify-content-center">
                         <div class= "ex8 parent8">
                             <div class="card-purple card-body">
                                 <h1 class="card-title">Diet the Right Way</h1><hr>
@@ -264,7 +265,7 @@
                                     amet consectetur adipisicing elit. 
                                     Sed est error repellat veritatis. <br>
                                 </p>
-                                <a style="color: rgb(241, 69, 16); padding-top: 5%; font-size: 1em;" href="#">Read More</a>
+                                <a class="read" href="#">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -272,8 +273,8 @@
 
                 <!--  for left and right navigation buttons -->
 
-                <div class="swiper-button-next" style="right:0; font-weight: 800; color: #82ce; padding: 2rem 0 2rem 0.2rem;"></div>
-                <div class="swiper-button-prev" style="left: 0; font-weight: 800; color: #82ce; padding: 2rem 0.2rem 2rem 0"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
 
             </div>
             <!-- <a href="#" class="view-more"><button class="btn-primary">View More</button></a> -->
@@ -324,9 +325,9 @@
         <!-- <div class="get-started">
             <div class="card">
                 <div class="live-card">
-                    <h3><i class="bi bi-exclamation-circle-fill blinker"></i> <span style="color: crimson;">Live</span> COVID- 19 Updates</h3>
+                    <h3><i class="bi bi-exclamation-circle-fill blinker"></i> <span>Live</span> COVID- 19 Updates</h3>
                     <p>Get the latest information here </p>
-                    <p><a style="font-size: medium; color: blue; text-decoration: underline;" href="#">Know more</a></p>
+                    <p><a href="#">Know more</a></p>
                 </div>
             </div>
         </div> -->

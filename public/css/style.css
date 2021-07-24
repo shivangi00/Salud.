@@ -464,9 +464,20 @@ color:#ffffff;
         border-radius: 1em;
     }
 
+    .swiper-button-next{
+        right:0; 
+        padding: 2rem 0 2rem 0.2rem;
+    }
+
+    .swiper-button-prev{
+        left: 0;
+        padding: 2rem 0.2rem 2rem 0;
+    }
+
     .swiper-button-next, 
     .swiper-button-prev{
         opacity: 0.5;
+        font-weight: 800;
     }
 
     .swiper-button-next:hover, 
@@ -476,6 +487,15 @@ color:#ffffff;
 
     .view-more {
         margin-left: calc(100% / 2.2);
+    }
+
+    .dots{
+        text-align:center;
+    }
+    .read{
+        color: rgb(241, 69, 16); 
+        padding-top: 5%; 
+        font-size: 1em;
     }
 
 .footer{
