@@ -71,7 +71,7 @@ if(status == "logout" || status == ""){
     localStorage.setItem("code", "");
 } else{
     // alert("Please Logout First!");
-    window.location.href = "home.html";
+    window.location.href = "user.html";
 }
 
 var swiper = new Swiper(".mySwiper", {
