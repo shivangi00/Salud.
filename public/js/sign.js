@@ -130,18 +130,29 @@ function init(){
     }
 }
 
+var num = '1234567890';
+var key = '';
+
 function signup(){
+    for(var i = 0; i < 4; i++){
+        key += num[Math.floor(Math.random() * 10)];
+    }
     var uname = document.getElementById("uname").value;
     var email = document.getElementById("email").value;
     var pass = document.getElementById("pswd").value;
-
+    var journal = key;
+    var meditate = key * 7;
+    var exercise = key * 3;
+// console.log(journal);console.log(meditate);console.log(exercise);
     //create JSON objects
-    var user = {Username: uname, Email: email, Password: pass};
+    var user = {Username: uname, Email: email, Password: pass, KeyJournal: journal, KeyMed: meditate, KeyExer: exercise};
 
     if(uname == "" || !validateEmail() || !validPass()){
         alert("Please fill the fields correctly!");
     } else if(userData.find(findEmail)){
         alert("Oops... this Email is already registered!");
+    } else if(userData.find(findUname)){
+        alert("Oops... this Username is taken.");
     } else{
         //push data to array
         userData.push(user);
@@ -166,6 +177,16 @@ function findEmail(userData){
     return false;
 }
 
+function findUname(userData){
+    var uname = document.getElementById("uname").value;
+
+    //find if email is registered
+    if(userData.Username === uname){
+        return true;
+    }
+    return false;
+}
+
 function findUser(){
     var pos = -1;
     var flag = 0;
@@ -177,6 +198,7 @@ function findUser(){
         if(obj.Password === pass && obj.Username === uname){
             pos = index;
             //access the password field at pos and update
+            localStorage.setItem("ID", pos);
             localStorage.setItem("Username", userData[pos].Username);
             localStorage.setItem("Email", userData[pos].Email);
             flag = 1;

@@ -1,3 +1,14 @@
+function init(){
+  /*If user is logged out or hasn't logged in yet*/
+  var status = localStorage.getItem("code");
+  if(status == "logout" || status == ""){
+      localStorage.setItem("code", "");
+  } else{
+      // alert("Please Logout First!");
+      window.location.href = "user.html";
+  }
+}
+
 var mode = localStorage.getItem("Theme");
 if(mode == "light"){
   lightMode();
@@ -45,34 +56,46 @@ function validateEmail() {
     }
     return( true );
 }
-const btn = document.getElementById('button');
-document.getElementById('form').addEventListener('submit', function(event) {
-   event.preventDefault();
 
-   const serviceID = 'default_service';
-   const templateID = 'template_uigtzob';
-
-   if(validateEmail() && document.getElementById("message").value != ""){
-    btn.value = 'Sending...';
-   emailjs.sendForm(serviceID, templateID, this)
-    .then(() => {
-      btn.value = 'Send Email';
-      alert('Sent!');
-    }, (err) => {
-      btn.value = 'Send Email';
-      alert(JSON.stringify(err));
-    });
-    }
-});
-
-/*If user is logged out or hasn't logged in yet*/
-var status = localStorage.getItem("code");
-if(status == "logout" || status == ""){
-    localStorage.setItem("code", "");
-} else{
-    // alert("Please Logout First!");
-    window.location.href = "user.html";
+function sendMail(){
+  const btn = document.getElementById('button');
+  if(validateEmail() && document.getElementById("message").value != ""){
+    btn.innerHTML = 'Sending...';
+    btn.style.backgroundColor = 'rgb(255, 84, 16)';
+    var tempParams = {
+        //   from_name: document.getElementById("fromName").value,
+        from_mail: document.getElementById("from_mail").value,
+        message: document.getElementById("message").value,
+    };
+    emailjs.send('gmail', 'template_uigtzob', tempParams).then(() => {
+            btn.value = 'Send Email';
+            alert('Sent!');
+          }, (err) => {
+            btn.value = 'Send Email';
+            alert(JSON.stringify(err));
+          });
+  }
 }
+
+
+// document.getElementById('form').addEventListener('submit', function(event) {
+//    event.preventDefault();
+
+//    const serviceID = 'default_service';
+//    const templateID = 'template_uigtzob';
+
+//    if(validateEmail() && document.getElementById("message").value != ""){
+//     btn.value = 'Sending...';
+//    emailjs.sendForm(serviceID, templateID, this)
+//     .then(() => {
+//       btn.value = 'Send Email';
+//       alert('Sent!');
+//     }, (err) => {
+//       btn.value = 'Send Email';
+//       alert(JSON.stringify(err));
+//     });
+//     }
+// });
 
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,

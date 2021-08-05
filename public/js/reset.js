@@ -2,10 +2,9 @@ var idx = -1;
 var attempt = 3;
     var status = localStorage.getItem("Timeout");
 
-    if(status == "unset"){
-
-    } else{
+    if(status == "set"){
         start();
+        localStorage.setItem("Timeout", "set");
         attempt = 3;
     }
 
@@ -18,9 +17,17 @@ function init(){
     // console.log(userData[0].Password);
     var mode = localStorage.getItem("Theme");
     if(mode == "light"){
-    lightMode();
+        lightMode();
     } else{
-    darkMode();
+        darkMode();
+    }
+
+    if(status == "set"){
+        start();
+        localStorage.setItem("Timeout", "set");
+        attempt = 3;
+    } else{
+        localStorage.setItem("Timeout", "unset");
     }
 }
 //=========================MODAL POP UP==================================================
@@ -117,8 +124,8 @@ function sendMail(){
 
     if(attempt == 0){
         start();
-        attempt = 3;
         localStorage.setItem("Timeout", "set");
+        attempt = 3;
         return;
     }
 }

@@ -16,8 +16,8 @@
                 <h1>Salud.</h1><br>
                 <h3>Welcome <span id="name"></span></h3><br>
                 <p>
-                    <button class="btn-primary" id="login" onclick="logout();">Logout</button>
-                    <button class="btn-primary" onclick="toggleTheme();"><i class="bi bi-circle-half"></i></button>
+                    <button class="btn-primary borderW" id="login" onclick="logout();">Logout</button>
+                    <button class="btn-primary borderW" onclick="toggleTheme();"><i class="bi bi-circle-half"></i></button>
                 </p>
             </div>
             <div class="nav-body">
@@ -67,143 +67,85 @@
         </div>
     </aside>
 
-    <main>
+    <main id="scroll">
         <section id="Profile" class="tabcontent active">
             <div class="container">
-                <h1><span id="pname"></span>'s Profile</h1>
+                <h1 class="heading"><span id="pname"></span>'s Profile</h1>
                 <div class="container-body">
                     <div>
                         <medium>Username</medium>
-                        <p id="uname" contenteditable="true">Hi!</p>
+                        <p id="uname" class="borderW" contenteditable="true">Hi!</p>
                     </div>
                     <div>
                         <medium>E-mail</medium>
-                        <p contenteditable="false"><i class="bi bi-lock-fill"></i>&nbsp;<span id="email">Hi!</span></p>
+                        <p class="borderW" contenteditable="false"><i class="bi bi-lock-fill"></i>&nbsp;<span id="email">Hi!</span></p>
                     </div>
                 </div>
-                <button class="btn-primary" onclick="update();">Update</button>
+                <button class="btn-primary borderW" onclick="updateProfile();">Update</button>&nbsp;&nbsp;
+                <button class="btn-primary borderW danger" onclick="deleteAccount();">Delete my Account</button>
             </div>
         </section>
+        
         <section id="Dashboard" class="tabcontent">
 
         </section>
+        
         <section id="Workout" class="tabcontent">
 
         </section>
+        
         <section id="Meditate" class="tabcontent">
 
         </section>
+
         <section id="Journal" class="tabcontent">
             <div class="container">
-                <h1>Journal</h1>
-                <div class="container-body">                
-                    <div class="toolbar">
-                        <ul class="tool-list">
-                        <li class="tool">
-                            <button 
-                            type="button" 
-                            data-command='justifyLeft'
-                            class="tool--btn">
-                            left
-                            </button>
-                        </li>
-                        <li class="tool">
-                            <button 
-                            type="button" 
-                            data-command='justifyCenter' 
-                            class="tool--btn">
-                            center
-                            </button>
-                        </li>
-                        <li class="tool">
-                            <button 
-                            type="button" 
-                            data-command="bold" 
-                            class="tool--btn">
-                            bold
-                            </button>
-                        </li>
-                        <li class="tool">
-                            <button 
-                            type="button" 
-                            data-command="quote" 
-                            class="tool--btn">
-                            quote
-                            </button>
-                        </li>
-                        <li class="tool">
-                            <button 
-                            type="button" 
-                            data-command="italic"
-                            class="tool--btn">
-                            italic
-                            </button>
-                        </li>
-                        <li class="tool">
-                            <button 
-                            type="button" 
-                            data-command="underline"
-                            class="tool--btn">
-                            underline
-                            </button>
-                        </li>
-                        <li class="tool">
-                            <button 
-                            type="button" 
-                            data-command="insertOrderedList"
-                            class="tool--btn">
-                            ol
-                            </button>
-                        </li>
-                        <li class="tool">
-                            <button 
-                            type="button" 
-                            data-command="insertUnorderedList"
-                            class="tool--btn">
-                            ul
-                            </button>
-                        </li>
-                        <li class="tool">
-                            <button 
-                            type="button" 
-                            data-command="createlink" 
-                            class="tool--btn">
-                            link
-                            </button>
-                        </li>
-                        </ul>
+                <h1 class="heading"><span id="Jname"></span>'s Journal</h1>
+                <div id="addNote">
+                    <div class="container-body">
+                        <textarea id="output" class="borderW" contenteditable="true"></textarea>    
                     </div>
-                    
-                    <div id="output" contenteditable="true"></div>    
+                    <button class="btn-primary borderW" onclick="save();">Save Note</button>&nbsp;
+                    <button class="btn-primary borderG right" onclick="toggleJ();">Read Old Journals</button>
+                    <button class="btn-primary borderW danger" onclick="discard();">Discard Note</button>
+
+                    <span id="action"></span>
                 </div>
-                <button class="btn-primary" onclick=""></button>
+
+                <!-- <h1 class="heading">Archives</h1> -->
+                <button id="newNote" class="btn-icon item" onclick="newNote();"><i class="bi bi-plus-circle large"></i></button>
+                <div id="note-div" class="container-body-con"> 
+                </div>
             </div>
         </section>
+
         <section id="Music Board" class="tabcontent">
             <div class="container">
                 
                 <div class="container-body">
                     
                 </div>
-                <button class="btn-primary" onclick=""></button>
+                <button class="btn-primary borderW" onclick=""></button>
             </div>
         </section>
+        
         <section id="Salud. TV" class="tabcontent">
             <div class="container">
                 
                 <div class="container-body">
                     
                 </div>
-                <button class="btn-primary" onclick=""></button>
+                <button class="btn-primary borderW" onclick=""></button>
             </div>
         </section>
+        
         <section id="Salud. Blogs" class="tabcontent">
             <div class="container">
                 
                 <div class="container-body">
                     
                 </div>
-                <button class="btn-primary" onclick=""></button>
+                <button class="btn-primary borderW" onclick=""></button>
             </div>
         </section>
     </main>
